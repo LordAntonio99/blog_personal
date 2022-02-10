@@ -29,6 +29,7 @@ const PostDetail = ({ post }) => {
             ))}
           </h3>
         )
+        // Codeblock support for content
       case 'code-block':
         return modifiedText.map((item, i) => (
           <div className="my-8">
