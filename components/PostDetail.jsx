@@ -1,5 +1,6 @@
 import React from 'react'
 import moment from 'moment'
+import { CopyBlock, dracula } from 'react-code-blocks'
 
 const PostDetail = ({ post }) => {
   const getContentFragment = (index, text, obj, type) => {
@@ -28,6 +29,14 @@ const PostDetail = ({ post }) => {
             ))}
           </h3>
         )
+      case 'code-block':
+        return modifiedText.map((item, i) => (
+          <div className="my-8">
+            <React.Fragment key={i}>
+              <CopyBlock text={item} theme={dracula} language="jsx" codeBlock />
+            </React.Fragment>
+          </div>
+        ))
       case 'paragraph':
         return (
           <p key={index} className="mb-8">
